@@ -1,0 +1,24 @@
+// functions/tsconfig.json
+{
+  "compilerOptions": {
+    "module": "NodeNext", // Veya "commonjs" de olabilir, Firebase genellikle commonjs bekler.
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext", // "module": "NodeNext" ise bu da "nodenext" olmalı.
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017", // Firebase Functions için genellikle es2017 veya es2020 iyidir.
+    "skipLibCheck": true // BU ÖNEMLİ
+  },
+  "compileOnSave": true,
+  "include": [
+    "src" // Sadece src klasöründeki .ts dosyalarını derle
+  ],
+  "exclude": [
+    "node_modules", // functions/node_modules'ı derleme
+    "lib",          // Çıktı klasörünü derleme
+    "../node_modules" // Projenin kök node_modules'ını kesinlikle hariç tut
+  ]
+}

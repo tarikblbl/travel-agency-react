@@ -1,0 +1,193 @@
+/* src/components/Layout/Header.module.css */
+.siteHeader {
+  position: static;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(135deg, #9b59b6 0%, #4a90e2 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Yıldızlar için */
+.siteHeader::before {
+  content: '✦';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: white;
+  text-shadow: 
+    2vw 2vh 0 rgba(255,255,255,0.9),
+    12vw 5vh 0 rgba(255,255,255,0.8),
+    22vw 1vh 0 rgba(255,255,255,0.7),
+    32vw 4vh 0 rgba(255,255,255,0.9),
+    42vw 3vh 0 rgba(255,255,255,0.8),
+    52vw 5vh 0 rgba(255,255,255,0.7),
+    62vw 2vh 0 rgba(255,255,255,0.9),
+    72vw 4vh 0 rgba(255,255,255,0.8),
+    82vw 1vh 0 rgba(255,255,255,0.7),
+    92vw 3vh 0 rgba(255,255,255,0.9),
+    7vw 6vh 0 rgba(255,255,255,0.8),
+    17vw 2vh 0 rgba(255,255,255,0.7),
+    27vw 4vh 0 rgba(255,255,255,0.9),
+    37vw 1vh 0 rgba(255,255,255,0.8),
+    47vw 5vh 0 rgba(255,255,255,0.7);
+  animation: twinkle 5s linear infinite;
+}
+
+/* Parıltılar için */
+.siteHeader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(2px 2px at 5% 30%, white 50%, transparent 100%),
+    radial-gradient(2px 2px at 15% 40%, white 50%, transparent 100%),
+    radial-gradient(2.5px 2.5px at 25% 20%, white 50%, transparent 100%),
+    radial-gradient(3px 3px at 35% 50%, white 50%, transparent 100%),
+    radial-gradient(2px 2px at 45% 25%, white 50%, transparent 100%),
+    radial-gradient(3px 3px at 55% 45%, white 50%, transparent 100%),
+    radial-gradient(2.5px 2.5px at 65% 35%, white 50%, transparent 100%),
+    radial-gradient(2px 2px at 75% 50%, white 50%, transparent 100%),
+    radial-gradient(3px 3px at 85% 30%, white 50%, transparent 100%),
+    radial-gradient(2px 2px at 95% 40%, white 50%, transparent 100%);
+  animation: shine 4s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+/* Işık dalgası efekti */
+.siteHeader::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(255,255,255,0.2) 40%, transparent 60%);
+  animation: lightWave 8s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.2);
+  }
+}
+
+@keyframes shine {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes lightWave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.navContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoLink {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoIcon {
+  font-size: 1.75rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinkItem {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.navLinkItem:hover {
+  opacity: 0.8;
+}
+
+.langLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.listPropertyButton {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.listPropertyButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0 1rem;
+  }
+  
+  .navLinks {
+    gap: 1rem;
+  }
+  
+  .logoText {
+    display: none;
+  }
+}
+
+/* Scroll durumunda header'a sabit bir arka plan eklemek için opsiyonel class */
+.scrolledHeader {
+  background-color: #0a2540;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}

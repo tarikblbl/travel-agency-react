@@ -1,0 +1,217 @@
+/* src/components/HeroSection/HeroSection.module.css */
+.heroSection {
+  /* ARKA PLAN RESMİNİ KENDİ RESMİNLE DEĞİŞTİR (src/assets/images/ altından) */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.65)), url('../../assets/images/seyahat-arkaplan.jpg'); /* KOYU EFEKTİ ARTIRDIM */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 80px 0 70px; /* ÜST PADDING'İ DAHA DA AZALTARAK METNİ YUKARI ALALIM */
+  min-height: 65vh;    /* Yüksekliği biraz daha azalttım */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroText {
+  margin-bottom: 35px;
+  animation: fadeInText 0.8s ease-out;
+}
+
+.heroText h1 {
+  font-size: 4.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heroText .highlightedText {
+  color: #fcd34d;
+  display: block; /* "Tatili" ve "Keşfet!" alt alta ve ortalı olması için */
+}
+
+.heroText p {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.searchFormCard {
+  background-color: rgba(30, 41, 59, 0.65);
+  color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 750px;
+  animation: fadeInForm 0.8s ease-out 0.2s backwards;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.formTitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+.searchForm {}
+
+.formRowSimplified {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.formGroup {
+  flex-grow: 0;
+}
+
+.destinationInputGroup {
+  flex-grow: 1;
+}
+
+.inputWithIcon {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.inputWithIcon:focus-within {
+  border-color: #fcd34d;
+  box-shadow: 0 0 0 4px rgba(252, 211, 77, 0.35);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.inputWithIcon input[type="text"] {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 10px 0;
+}
+.inputWithIcon input[type="text"]::placeholder {
+    color: #cbd5e1;
+    opacity: 0.8;
+}
+
+.searchButton {
+  background: #fcd34d;
+  color: #1a202c;
+  border: none;
+  padding: 0 35px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+.searchButton:hover {
+  background-color: #facc15;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(0,0,0,0.25);
+}
+.searchButton:active {
+  transform: translateY(0px);
+  background-color: #eab308;
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInForm {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 80px 0 60px;
+    min-height: auto;
+  }
+  .heroText .highlightedText {
+  color: #fcd34d;
+  display: block; /* "Tatili" ve "Keşfet!" alt alta ve ortalı olması için */
+}
+  .heroText p {
+    font-size: 1.1rem;
+  }
+  .searchFormCard {
+    padding: 20px;
+    margin: 0 10px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  .formTitle {
+    font-size: 1.2rem;
+  }
+  .formRowSimplified {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .destinationInputGroup,
+  .formGroup {
+    width: 100%;
+  }
+  .inputWithIcon, .searchButton {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .inputWithIcon { padding: 0 15px; }
+  .searchButton { padding: 0 25px; }
+}

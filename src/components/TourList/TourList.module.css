@@ -1,0 +1,13 @@
+/* src/components/TourList/TourList.module.css */
+.tourListGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Kartların min genişliği */
+  gap: 25px; /* Kartlar arası boşluk */
+}
+
+.noToursMessage {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #777;
+}

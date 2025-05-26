@@ -1,0 +1,88 @@
+/* src/components/DestinationsList/DestinationsList.module.css */
+.listContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding: 2rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox için scrollbar'ı gizle */
+  -ms-overflow-style: none; /* IE ve Edge için scrollbar'ı gizle */
+  scroll-behavior: smooth;
+}
+
+.listContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari ve Opera için scrollbar'ı gizle */
+}
+
+.cardsWrapper {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.5rem 2rem;
+  min-width: min-content;
+  justify-content: flex-end;
+}
+
+.cardContainer {
+  flex: 0 0 300px; /* Sabit genişlik */
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+/* Scroll butonları */
+.scrollButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a90e2 0%, #9b59b6 100%);
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.scrollButton:hover {
+  background: linear-gradient(135deg, #357abd 0%, #8e44ad 100%);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.scrollButton:disabled {
+  opacity: 0;
+  cursor: default;
+}
+
+.scrollButtonLeft {
+  left: 1rem;
+}
+
+.scrollButtonRight {
+  right: 1rem;
+}
+
+.listContainerWrapper {
+  position: relative;
+  margin: 0 -2rem; /* Negatif margin ile container'ı genişlet */
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    flex: 0 0 260px;
+    max-width: 260px;
+  }
+
+  .cardsWrapper {
+    padding: 0.5rem 1rem;
+  }
+
+  .scrollButton {
+    display: none; /* Mobilde scroll butonlarını gizle */
+  }
+}

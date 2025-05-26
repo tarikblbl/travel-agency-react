@@ -1,0 +1,52 @@
+/* src/pages/NotFoundPage.module.css */
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 200px); /* Header ve Footer yüksekliğini çıkararak ortalamaya çalışır */
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa; /* Hafif bir arka plan */
+  color: #333;
+}
+
+.errorCode {
+  font-size: 6rem; /* Büyük 404 yazısı */
+  font-weight: bold;
+  color: #007bff; /* Tema rengi veya dikkat çekici bir renk */
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.errorMessage {
+  font-size: 2rem; /* "Oops! Sayfa Bulunamadı." başlığı */
+  color: #555;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.errorDescription {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px; /* Açıklamanın çok geniş olmasını engeller */
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.homeButton {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #007bff; /* Ana tema butonu rengi */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.homeButton:hover {
+  background-color: #0056b3; /* Butonun hover rengi */
+}
